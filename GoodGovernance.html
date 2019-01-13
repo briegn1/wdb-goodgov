@@ -872,12 +872,12 @@
 			  let q = 1
 			  while (q<4) {
 			  	if (captxt[t3[q-1]['WBCountry/Territory']]) {
-			  		d3.select('#t3-'+q).text('').append('u').attr('class','tb3txt').attr('title',t3[q-1]['WBCountry/Territory']).text(t3[q-1]['WBCountry/Territory']+': '+t3[q-1].diff.toFixed(2))
+			  		d3.select('#t3-'+q).text('').append('u').attr('class','tb3txt').attr('cty',t3[q-1]['WBCountry/Territory']).text(t3[q-1]['WBCountry/Territory']+': '+t3[q-1].diff.toFixed(2))
 			  	} else {
 			  		d3.select('#t3-'+q).text(t3[q-1]['WBCountry/Territory']+': '+t3[q-1].diff.toFixed(2))
 			  	}
 			  	if (captxt[b3[q-1]['WBCountry/Territory']]) {
-			  		d3.select('#b3-'+q).text('').append('u').attr('class','tb3txt').attr('title',b3[q-1]['WBCountry/Territory']).text(b3[q-1]['WBCountry/Territory']+': '+b3[q-1].diff.toFixed(2))
+			  		d3.select('#b3-'+q).text('').append('u').attr('class','tb3txt').attr('cty',b3[q-1]['WBCountry/Territory']).text(b3[q-1]['WBCountry/Territory']+': '+b3[q-1].diff.toFixed(2))
 			  	} else {
 			  		d3.select('#b3-'+q).text(b3[q-1]['WBCountry/Territory']+': '+b3[q-1].diff.toFixed(2))
 			  	}
@@ -892,8 +892,8 @@
 			  	q++
 			  }
 			}
-			d3.selectAll('.tb3txt').on('click',function() {
-				var thisCon = d3.select(this).attr('title')
+			d3.selectAll('.tb3txt').attr('title','Click for More Information').on('click',function() {
+				var thisCon = d3.select(this).attr('cty')
 				d3.select("#captitle").text(thisCon)
 				d3.select("#captxt").text(captxt[thisCon])
 				d3.select("#modbg").transition(trans).style("display","block")
