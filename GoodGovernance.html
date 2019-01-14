@@ -166,31 +166,23 @@
     		color: blue;
     		cursor: pointer;
     	}
+			
+			#controlbox {
+    		position: relative;
+    		float: left;
+				z-index: 7;
+    	}
 	</style>
 </head>
 <body>
 	<div class='header'>
 		<div class='title'>What Makes a Good Government?</div>
-		<div class='subtitle'>A Tool for Exploring 21 Years of the <a href="http://info.worldbank.org/governance/wgi/#home" target="_blank">Worldwide Governance Indicators</a></div><hr/>
+		<div class='subtitle'>A Tool for Exploring 21 Years of the <a href="http://info.worldbank.org/governance/wgi/#home" target="_blank">Worldwide Governance Indicators</a></div>
+		<div class="subtitle" id="intro" style="color: blue; cursor:pointer; positon:relative; float:right;"><u>INTRODUCTION</u></div>
+		<div class="subtitle" id="help" style="color: blue; cursor:pointer; positon:relative; float:right;"><u>HELP</u></div><hr/>
 	</div>
 	<div class='primary'>
-		<svg id="grid" height=810 width=1080></svg>
-		<div id="infobox">
-			<div class="subtitle" id="tbhead"><u>Change <span id="tbrange"></span></u></div><br/>
-			<div class='topbottom'><u>Top 3</u></div>
-			<span class='topbottom'>1) </span><span class='topbottom' id="t3-1"></span><br/>
-			<span class='topbottom'>2) </span><span class='topbottom' id="t3-2"></span><br/>
-			<span class='topbottom'>3) </span><span class='topbottom' id="t3-3"></span><br/><br/>
-			<div class='topbottom'><u>Bottom 3</u></div>
-			<span class='topbottom'>1) </span><span class='topbottom' id="b3-1"></span><br/>
-			<span class='topbottom'>2) </span><span class='topbottom' id="b3-2"></span><br/>
-			<span class='topbottom'>3) </span><span class='topbottom' id="b3-3"></span><br/>
-			<hr/>
-			<div class='subtitle'><u>Info Window</u></div><br/>
-			<span class='topbottom' style="display:inline-block;"><u id="country"></u></span><br/>
-			<span class='topbottom' id="value" style="display:inline-block;"></span>
-			<svg id="ctyGraphic" height=200 width=200></svg>
-			<hr/>
+		<div id="controlbox">
 			<div class='subtitle'><u>Controls</u></div><br/>
 			<span class='topbottom'>Year: </span>
 			<div class="changer">
@@ -243,8 +235,25 @@
 				<option selected val="Off" title="Hide Continent Outlines">Off</option>
 				<option val="On" title="Show Continent Outlines">On</option>
 			</select><br/><br/>
-			<div class="subtitle" id="help" style="color: blue; cursor:pointer;"><u>HELP</u></div>
 			<span class='topbottom'>Source: <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=1682130" target="_blank">Kaufmann D., A. Kraay, and M. Mastruzzi (2010), The Worldwide Governance Indicators: Methodology and Analytical Issues</a></span>
+		</div>
+		<svg id="grid" height=810 width=1080></svg>
+		<div id="infobox">
+			<svg id="cbar" height=150 width=200></svg>
+			<div class="subtitle" id="tbhead"><u>Change <span id="tbrange"></span></u></div><br/>
+			<div class='topbottom'><u>Top 3</u></div>
+			<span class='topbottom'>1) </span><span class='topbottom' id="t3-1"></span><br/>
+			<span class='topbottom'>2) </span><span class='topbottom' id="t3-2"></span><br/>
+			<span class='topbottom'>3) </span><span class='topbottom' id="t3-3"></span><br/><br/>
+			<div class='topbottom'><u>Bottom 3</u></div>
+			<span class='topbottom'>1) </span><span class='topbottom' id="b3-1"></span><br/>
+			<span class='topbottom'>2) </span><span class='topbottom' id="b3-2"></span><br/>
+			<span class='topbottom'>3) </span><span class='topbottom' id="b3-3"></span><br/>
+			<hr/>
+			<div class='subtitle'><u>Info Window</u></div><br/>
+			<span class='topbottom' style="display:inline-block;"><u id="country"></u></span><br/>
+			<span class='topbottom' id="value" style="display:inline-block;"></span>
+			<svg id="ctyGraphic" height=200 width=200></svg>
 		</div>
 	</div>
 	<div id="modbg" class="modbg"></div>
@@ -282,6 +291,8 @@
 			'GE':'Government Effectiveness','RQ':'Regulatory Quality','RL':'Rule of Law','CC':'Control of Corruption'}
 
 		const trans = d3.transition().duration(750)
+		
+		const cbsvg = d3.select('#cbar')
 
 		d3.select("#close").on('click',function() {
 			d3.select("#modbg").transition(trans).style("display","none")
@@ -582,14 +593,14 @@
 			.attr('x',5)
 			.attr('y',15)
 			.text('Color by Percentile')
-  	svg.selectAll(".cbrect").data(crange).enter().append("rect")
+  	cbsvg.selectAll(".cbrect").data(crange).enter().append("rect")
   		.attr('class','cbrect')
 	    .attr('x',function(d){return d+5})
 	    .attr('y',25)
 	    .attr('width',1)
 	    .attr('height',30)
 	    .attr('fill',function(d) {return color(d/1.5)})
-	  svg.selectAll(".cbtext").data(crange).enter().append("text")
+		cbsvg.selectAll(".cbtext").data(crange).enter().append("text")
 	  	.attr('class','cbtext')
 	    .attr('x',function(d) {return d+5})
 	    .attr('y',60)
