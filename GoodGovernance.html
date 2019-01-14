@@ -354,7 +354,7 @@
 		})
 
 		var data;
-		d3.text(`https://gist.githubusercontent.com/briegn1/65da9a8b0b52f38cd2da3d2b2ac31e40/raw/f95094bdb623f2dd3d54cb8ed3353d6dec95d848/Coordinates.csv`).then(function(txt) {
+		d3.text(`https://gist.githubusercontent.com/mlammers86/65da9a8b0b52f38cd2da3d2b2ac31e40/raw/f95094bdb623f2dd3d54cb8ed3353d6dec95d848/Coordinates.csv`).then(function(txt) {
 				data = d3.csvParse(txt)
 				onUpdate(data,year,param,showCon)
 				//onUpdate(data,year,param,showCon)
@@ -599,23 +599,24 @@
 			.attr('text-anchor','middle')
 			.attr('alignment-baseline','central')
 			.attr('x',100)
-			.attr('y',10)
+			.attr('y',15)
+			.attr('text-decoration','underline')
 			.text('Color by Percentile')
   	cbsvg.selectAll(".cbrect").data(crange).enter().append("rect")
   		.attr('class','cbrect')
 	    .attr('x',function(d){return d+5})
-	    .attr('y',25)
+	    .attr('y',30)
 	    .attr('width',1)
 	    .attr('height',30)
 	    .attr('fill',function(d) {return color(d/1.5)})
 		cbsvg.selectAll(".cbtext").data(crange).enter().append("text")
 	  	.attr('class','cbtext')
 	    .attr('x',function(d) {return d+5})
-	    .attr('y',60)
+	    .attr('y',65)
 	    .attr('font-family','sans-serif')
 	    .attr('font-size','12px')
 	    .attr('fill','black')
-	    .attr('transform',function(d) {return 'rotate(45,'+d+',60)'})
+	    .attr('transform',function(d) {return 'rotate(45,'+d+',65)'})
 	    .text(function(d) {if (d%75 == 0) {return Math.round(d/1.5)} else {return ''}})
 
 		const line = d3.line()
