@@ -244,7 +244,7 @@
 			<svg id="grid" height=810 width=1000></svg>
 		</div>
 		<div id="infobox">
-			<svg id="cbar" height=80 width=200></svg>
+			<svg id="cbar" height=80 width=200></svg><hr/>
 			<div class="subtitle" id="tbhead"><u>Change <span id="tbrange"></span></u></div><br/>
 			<div class='topbottom'><u>Top 3</u></div>
 			<span class='topbottom'>1) </span><span class='topbottom' id="t3-1"></span><br/>
@@ -575,7 +575,7 @@
 			.attr('id','lookAt')
 			.attr('class','subtitle')
 			.attr('fill','black')
-			.attr('x',540)
+			.attr('x',500)
 			.attr('y',25)
 			.attr('text-anchor','middle')
 			.attr('alignment-baseline','central')
@@ -594,9 +594,12 @@
 			.attr('stroke-width','1px')*/
 		cbsvg.append('text')
 			.attr('id','cbarttl')
+			.attr('class','subtitle')
 			.attr('fill','black')
-			.attr('x',5)
-			.attr('y',15)
+			.attr('text-anchor','middle')
+			.attr('alignment-baseline','central')
+			.attr('x',100)
+			.attr('y',10)
 			.text('Color by Percentile')
   	cbsvg.selectAll(".cbrect").data(crange).enter().append("rect")
   		.attr('class','cbrect')
