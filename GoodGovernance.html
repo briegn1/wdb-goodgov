@@ -23,7 +23,7 @@
     		position: fixed;
     		left: 50%;
     		transform: translateX(-50%);
-    		width: 1310px;
+    		width: 1230px;
     		overflow-y: auto;
     		height: calc(100% - 87px);
     		/*background-color: #FFEBCD;*/
@@ -36,6 +36,7 @@
     	#svgcont {
     		position: relative;
     		float: left;
+				width: 1000px;
     	}
 
     	#infobox {
@@ -180,8 +181,8 @@
 	<div class='header'>
 		<div class='title'>What Makes a Good Government?</div>
 		<div class='subtitle'>A Tool for Exploring 21 Years of the <a href="http://info.worldbank.org/governance/wgi/#home" target="_blank">Worldwide Governance Indicators</a></div>
-		<div class="subtitle" id="intro" style="color: blue; cursor:pointer; position:fixed; right:5px; top:5px; width: 100px;"><u>INTRODUCTION</u></div>
-		<div class="subtitle" id="help" style="color: blue; cursor:pointer; position:fixed; right:5px; top:30px; width: 100px;"><u>HELP</u></div><hr/>
+		<button class="subtitle" id="intro" style="position:fixed; right:5px; top:7px; width: 150px;">INTRODUCTION</div>
+		<button class="subtitle" id="help" style="position:fixed; right:5px; top:37px; width: 150px;">HELP</div><hr/>
 	</div>
 	<div class='primary'>
 		<div id="svgcont">
@@ -240,10 +241,10 @@
 				</select><br/><br/>
 				<span class='topbottom'>Source: <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=1682130" target="_blank">Kaufmann D., A. Kraay, and M. Mastruzzi (2010), The Worldwide Governance Indicators: Methodology and Analytical Issues</a></span>
 			</div>
-			<svg id="grid" height=810 width=1080></svg>
+			<svg id="grid" height=810 width=1000></svg>
 		</div>
 		<div id="infobox">
-			<svg id="cbar" height=150 width=200></svg>
+			<svg id="cbar" height=80 width=200></svg>
 			<div class="subtitle" id="tbhead"><u>Change <span id="tbrange"></span></u></div><br/>
 			<div class='topbottom'><u>Top 3</u></div>
 			<span class='topbottom'>1) </span><span class='topbottom' id="t3-1"></span><br/>
