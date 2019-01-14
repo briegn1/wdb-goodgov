@@ -33,7 +33,7 @@
     		cursor: pointer;
     	}
 
-    	#grid {
+    	#svgcont {
     		position: relative;
     		float: left;
     	}
@@ -168,8 +168,9 @@
     	}
 			
 			#controlbox {
-    		position: relative;
-    		float: left;
+    		position: fixed;
+    		left: 0;
+				top: 0;
 				z-index: 7;
 				width: 200px;
     	}
@@ -179,66 +180,68 @@
 	<div class='header'>
 		<div class='title'>What Makes a Good Government?</div>
 		<div class='subtitle'>A Tool for Exploring 21 Years of the <a href="http://info.worldbank.org/governance/wgi/#home" target="_blank">Worldwide Governance Indicators</a></div>
-		<div class="subtitle" id="intro" style="color: blue; cursor:pointer; position:relative; float:right;"><u>INTRODUCTION</u></div>
-		<div class="subtitle" id="help" style="color: blue; cursor:pointer; position:relative; float:right;"><u>HELP</u></div><hr/>
+		<div class="subtitle" id="intro" style="color: blue; cursor:pointer; position:relative; float:right; width: 100px;"><u>INTRODUCTION</u></div>
+		<div class="subtitle" id="help" style="color: blue; cursor:pointer; position:relative; float:right; width: 100px;"><u>HELP</u></div><hr/>
 	</div>
 	<div class='primary'>
-		<div id="controlbox" class="">
-			<div class='subtitle'><u>Controls</u></div><br/>
-			<span class='topbottom'>Year: </span>
-			<div class="changer">
-			<span class="updown" id="downyear" title="Change Year Down">&#x25C0;</span>
-			<select id="year">
-				<option selected value="ALL" id="allyear">ALL</option>
-				<option value="1996">1996</option>
-				<option value="1998">1998</option>
-				<option value="2000">2000</option>
-				<option value="2002">2002</option>
-				<option value="2003">2003</option>
-				<option value="2004">2004</option>
-				<option value="2005">2005</option>
-				<option value="2006">2006</option>
-				<option value="2007">2007</option>
-				<option value="2008">2008</option>
-				<option value="2009">2009</option>
-				<option value="2010">2010</option>
-				<option value="2011">2011</option>
-				<option value="2012">2012</option>
-				<option value="2013">2013</option>
-				<option value="2014">2014</option>
-				<option value="2015">2015</option>
-				<option value="2016">2016</option>
-				<option value="2017">2017</option>
-			</select>
-			<span class="updown" id="upyear" title="Change Year Up">&#x25B6;</span></div><br/><br/>
-			<span class='topbottom'>Index: </span>
-			<div class="changer">
-			<span class="updown" id="downparam" title="Change Index Down">&#x25C0;</span>
-			<select id="param">
-				<!--<option value="ALL" id="allparam" disabled>ALL</option>
-				<option value="VA" selected>Voice & Accountability</option>
-				<option value="PS">Political Stability & Absence of Violence/Terrorism</option>
-				<option value="GE">Government Effectiveness</option>
-				<option value="RQ">Regulatory Quality</option>
-				<option value="RL">Rule of Law</option>
-				<option value="CC">Control of Corruption</option>-->
-				<option value="ALL" id="allparam" disabled>ALL</option>
-				<option value="VA" selected>VA</option>
-				<option value="PS">PS</option>
-				<option value="GE">GE</option>
-				<option value="RQ">RQ</option>
-				<option value="RL">RL</option>
-				<option value="CC">CC</option>
-			</select>
-			<span class="updown" id="upparam" title="Change Index Up">&#x25B6;</span></div><br/><br/>
-			<span class='topbottom'>Continent Outlines: </span>
-			<select id="showCon">
-				<option selected val="Off" title="Hide Continent Outlines">Off</option>
-				<option val="On" title="Show Continent Outlines">On</option>
-			</select><br/><br/>
-			<span class='topbottom'>Source: <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=1682130" target="_blank">Kaufmann D., A. Kraay, and M. Mastruzzi (2010), The Worldwide Governance Indicators: Methodology and Analytical Issues</a></span>
+		<div id="svgcont">
+			<div id="controlbox">
+				<div class='subtitle'><u>Controls</u></div><br/>
+				<span class='topbottom'>Year: </span>
+				<div class="changer">
+				<span class="updown" id="downyear" title="Change Year Down">&#x25C0;</span>
+				<select id="year">
+					<option selected value="ALL" id="allyear">ALL</option>
+					<option value="1996">1996</option>
+					<option value="1998">1998</option>
+					<option value="2000">2000</option>
+					<option value="2002">2002</option>
+					<option value="2003">2003</option>
+					<option value="2004">2004</option>
+					<option value="2005">2005</option>
+					<option value="2006">2006</option>
+					<option value="2007">2007</option>
+					<option value="2008">2008</option>
+					<option value="2009">2009</option>
+					<option value="2010">2010</option>
+					<option value="2011">2011</option>
+					<option value="2012">2012</option>
+					<option value="2013">2013</option>
+					<option value="2014">2014</option>
+					<option value="2015">2015</option>
+					<option value="2016">2016</option>
+					<option value="2017">2017</option>
+				</select>
+				<span class="updown" id="upyear" title="Change Year Up">&#x25B6;</span></div><br/><br/>
+				<span class='topbottom'>Index: </span>
+				<div class="changer">
+				<span class="updown" id="downparam" title="Change Index Down">&#x25C0;</span>
+				<select id="param">
+					<!--<option value="ALL" id="allparam" disabled>ALL</option>
+					<option value="VA" selected>Voice & Accountability</option>
+					<option value="PS">Political Stability & Absence of Violence/Terrorism</option>
+					<option value="GE">Government Effectiveness</option>
+					<option value="RQ">Regulatory Quality</option>
+					<option value="RL">Rule of Law</option>
+					<option value="CC">Control of Corruption</option>-->
+					<option value="ALL" id="allparam" disabled>ALL</option>
+					<option value="VA" selected>VA</option>
+					<option value="PS">PS</option>
+					<option value="GE">GE</option>
+					<option value="RQ">RQ</option>
+					<option value="RL">RL</option>
+					<option value="CC">CC</option>
+				</select>
+				<span class="updown" id="upparam" title="Change Index Up">&#x25B6;</span></div><br/><br/>
+				<span class='topbottom'>Continent Outlines: </span>
+				<select id="showCon">
+					<option selected val="Off" title="Hide Continent Outlines">Off</option>
+					<option val="On" title="Show Continent Outlines">On</option>
+				</select><br/><br/>
+				<span class='topbottom'>Source: <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=1682130" target="_blank">Kaufmann D., A. Kraay, and M. Mastruzzi (2010), The Worldwide Governance Indicators: Methodology and Analytical Issues</a></span>
+			</div>
+			<svg id="grid" height=810 width=1080></svg>
 		</div>
-		<svg id="grid" height=810 width=1080></svg>
 		<div id="infobox">
 			<svg id="cbar" height=150 width=200></svg>
 			<div class="subtitle" id="tbhead"><u>Change <span id="tbrange"></span></u></div><br/>
