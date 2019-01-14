@@ -23,7 +23,7 @@
     		position: fixed;
     		left: 50%;
     		transform: translateX(-50%);
-    		width: 1230px;
+    		width: 1310px;
     		overflow-y: auto;
     		height: calc(100% - 87px);
     		/*background-color: #FFEBCD;*/
@@ -241,10 +241,10 @@
 				</select><br/><br/>
 				<span class='topbottom'>Source: <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=1682130" target="_blank">Kaufmann D., A. Kraay, and M. Mastruzzi (2010), The Worldwide Governance Indicators: Methodology and Analytical Issues</a></span>
 			</div>
-			<svg id="grid" height=810 width=1000></svg>
+			<svg id="grid" height=810 width=1000 style="position: relative; float: right; padding-right: 10px;"></svg>
 		</div>
 		<div id="infobox">
-			<svg id="cbar" height=80 width=200></svg><hr/>
+			<svg id="cbar" height=90 width=200></svg><hr/>
 			<div class="subtitle" id="tbhead"><u>Change <span id="tbrange"></span></u></div><br/>
 			<div class='topbottom'><u>Top 3</u></div>
 			<span class='topbottom'>1) </span><span class='topbottom' id="t3-1"></span><br/>
@@ -604,19 +604,19 @@
 			.text('Color by Percentile')
   	cbsvg.selectAll(".cbrect").data(crange).enter().append("rect")
   		.attr('class','cbrect')
-	    .attr('x',function(d){return d+5})
+	    .attr('x',function(d){return d+15})
 	    .attr('y',30)
 	    .attr('width',1)
 	    .attr('height',30)
 	    .attr('fill',function(d) {return color(d/1.5)})
 		cbsvg.selectAll(".cbtext").data(crange).enter().append("text")
 	  	.attr('class','cbtext')
-	    .attr('x',function(d) {return d+5})
+	    .attr('x',function(d) {return d+15})
 	    .attr('y',65)
 	    .attr('font-family','sans-serif')
 	    .attr('font-size','12px')
 	    .attr('fill','black')
-	    .attr('transform',function(d) {return 'rotate(45,'+d+',65)'})
+	    .attr('transform',function(d) {return 'rotate(45,'+(d+15)+',65)'})
 	    .text(function(d) {if (d%75 == 0) {return Math.round(d/1.5)} else {return ''}})
 
 		const line = d3.line()
