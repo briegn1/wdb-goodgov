@@ -256,7 +256,7 @@
 			<svg id="grid" height=810 width=1000 style="position: relative; float: right; padding-right: 10px;"></svg>
 		</div>
 		<div id="infobox">
-			<svg id="cbar" height=90 width=200></svg><hr/>
+			<svg id="cbar" height=90 width=200></svg>
 			<div class="subtitle" id="tbhead"><u>Change <span id="tbrange"></span></u></div><br/>
 			<div class='topbottom'><u>Top 3</u></div>
 			<span class='topbottom'>1) </span><span class='topbottom' id="t3-1"></span><br/>
@@ -266,7 +266,7 @@
 			<span class='topbottom'>1) </span><span class='topbottom' id="b3-1"></span><br/>
 			<span class='topbottom'>2) </span><span class='topbottom' id="b3-2"></span><br/>
 			<span class='topbottom'>3) </span><span class='topbottom' id="b3-3"></span><br/>
-			<hr/>
+			<br/>
 			<div class='subtitle'><u>Info Window</u></div><br/>
 			<span class='topbottom' style="display:inline-block;"><u id="country"></u></span><br/>
 			<span class='topbottom' id="value" style="display:inline-block;"></span>
@@ -883,7 +883,7 @@
 		      cell.merge(enterCell).select("text").transition(trans).attr('opacity',function(d) {return showAllYear(d,prm)})
 		    } else {
 		      cell.merge(enterCell).select("path").transition(trans).attr('d',function(d) {
-		        if (d.points.length>4) {
+		        if (d.points.length>3) {
 		          return hex(d.points)
 		        } else {return false}
 		      }).attr('fill','black')
