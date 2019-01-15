@@ -199,7 +199,7 @@
 	<div class='primary'>
 		<div id="svgcont">
 			<div id="controlbox">
-				<div class='subtitle'><u>Controls</u></div><br/>
+				<div class='subtitle'><b>Controls</b></div><br/>
 				<span class='topbottom'>Year: </span>
 				<div class="changer">
 				<span class="updown" id="downyear" title="Change Year Down">&#x25C0;</span>
@@ -257,25 +257,25 @@
 		</div>
 		<div id="infobox">
 			<svg id="cbar" height=90 width=200></svg>
-			<div class="subtitle" id="tbhead"><u>Change <span id="tbrange"></span></u></div><br/>
-			<div class='topbottom'><u>Top 3</u></div>
-			<span class='topbottom'>1) </span><span class='topbottom' id="t3-1"></span><br/>
-			<span class='topbottom'>2) </span><span class='topbottom' id="t3-2"></span><br/>
-			<span class='topbottom'>3) </span><span class='topbottom' id="t3-3"></span><br/><br/>
+			<div class="subtitle" id="tbhead"><b>Change <span id="tbrange"></span></b></div><br/>
+			<div class='topbottom'><b>Top 3</b></div>
+			<span class='topbottom'>1. </span><span class='topbottom' id="t3-1"></span><br/>
+			<span class='topbottom'>2. </span><span class='topbottom' id="t3-2"></span><br/>
+			<span class='topbottom'>3. </span><span class='topbottom' id="t3-3"></span><br/><br/>
 			<div class='topbottom'><u>Bottom 3</u></div>
-			<span class='topbottom'>1) </span><span class='topbottom' id="b3-1"></span><br/>
-			<span class='topbottom'>2) </span><span class='topbottom' id="b3-2"></span><br/>
-			<span class='topbottom'>3) </span><span class='topbottom' id="b3-3"></span><br/>
+			<span class='topbottom'>1. </span><span class='topbottom' id="b3-1"></span><br/>
+			<span class='topbottom'>2. </span><span class='topbottom' id="b3-2"></span><br/>
+			<span class='topbottom'>3. </span><span class='topbottom' id="b3-3"></span><br/>
 			<br/>
-			<div class='subtitle'><u>Info Window</u></div><br/>
-			<span class='topbottom' style="display:inline-block;"><u id="country"></u></span><br/>
+			<div class='subtitle'><b>Info Window</b></div><br/>
+			<span class='topbottom' style="display:inline-block;"><b id="country"></b></span><br/>
 			<span class='topbottom' id="value" style="display:inline-block;"></span>
 			<svg id="ctyGraphic" height=200 width=200></svg>
 		</div>
 	</div>
 	<div id="modbg" class="modbg"></div>
 	<div id="modal" class="modal">
-		<div class="title"><b><u>INTRODUCTION</u></b></div>
+		<div class="title"><b>INTRODUCTION</b></div>
 		<p class="modtxt">The goal of this interactive visualization is to help ease exploration and comparison of the Worldwide Governance Indicators. These indices have been calculated since 1996 and provide six ways of assessing "good government" across the globe. For more details about the six indices, which are represented as percentiles from 0 to 100, and the methodology, <a href="http://info.worldbank.org/governance/wgi/#home" target="_blank">click here</a> (or the link in the title) to be taken to the WGI homepage.</p>
 		<p class="modtxt modpan"><span class="panttl"><b>ONE INDEX, ONE YEAR</b></span>Each country is represented as a geolocated square. This is to enable easy comparison even between countries with small geographic area. Squares are colored by their index value for the selected year, with more red meaning lower on the 0 to 100 range, and more blue meaning higher. Clicking on a country will display its full name in the "Info Window" as well as its 90% confidence interval for value for that index for that year.<br/><img src="./oneone.png" class="modimg"/></p>
 		<p class="modtxt modpan"><span class="panttl"><b>ONE INDEX, ALL YEARS</b></span>Each square contains a stripped-down line graph for the 1996-2017 period of the survey. This enables comparison between countries as well as quick assessment of improvements or downgrading over time. Colors here are based on an average value for the index over the time period. Clicking on the country displays a larger version of the line graph in the "Info Window" that includes the 90% confidence interval over time in grey.<img src="./allone.png" class="modimg"/></p>
@@ -284,7 +284,7 @@
 		<button id="close" class="closebtn">CLOSE</button>
 	</div>
 	<div id="modhelp" class="modal" style="height:450px; display: none;">
-		<div class="title"><b><u>HELP</u></b></div>
+		<div class="title"><b>HELP</b></div>
 		<p class="modtxt"><span class="halfttl"><b>ABBREVIATIONS: </b></span></br>
 			<b>VA</b> - Voice & Accountability - The extent to which a country's citizens are able to participate in selecting their government, as well as freedom of expression, freedom of association, and a free media.<br/>
 			<b>PS</b> - Political Stability & Absence of Violence/Terrorism - The likelihood that the government will be destabilized by unconstitutional or violent means, including terrorism.<br/>
@@ -306,7 +306,7 @@
 		<button id="closehelp" class="closebtn">CLOSE</button>
 	</div>
 	<div id="modcap" class="modal" style="height: 180px; width: 500px; display: none;">
-		<div class="title"><u id="captitle"></u></div>
+		<div class="title"><b id="captitle"></b></div>
 		<p class="modtxt" id="captxt"></p>
 		<button id="closecap" class="closebtn">CLOSE</button>
 	</div>
@@ -652,7 +652,7 @@
 			.attr('alignment-baseline','central')
 			.attr('x',100)
 			.attr('y',15)
-			.attr('text-decoration','underline')
+			.attr('font-weight','bold')
 			.text('Color by Percentile')
   	cbsvg.selectAll(".cbrect").data(crange).enter().append("rect")
   		.attr('class','cbrect')
