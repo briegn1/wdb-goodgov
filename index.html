@@ -207,14 +207,27 @@
 			.lne {
 				font-family: 'Montserrat',sans-serif;
 			}
+			
+			.button {
+				position:fixed; 
+				right:5px;
+				width: 150px;
+				background-color:#67aeca;
+				color: white;
+				border: 1px solid gainsboro;
+			}
+			
+			.button:hover {
+				background-color:#558FA6;
+			}
 	</style>
 </head>
 <body>
 	<div class='header'>
 		<div class='title'>What Makes a Good Government?</div>
 		<div class='subtitle'>A Tool for Exploring 21 Years of the <a href="http://info.worldbank.org/governance/wgi/#home" target="_blank">Worldwide Governance Indicators</a></div>
-		<button class="subtitle" id="intro" style="position:fixed; right:5px; top:7px; width: 150px; background-color:#67aeca; color: white;">INTRODUCTION</button>
-		<button class="subtitle" id="help" style="position:fixed; right:5px; top:37px; width: 150px; background-color:#67aeca; color: white;">HELP</button>
+		<div class="subtitle button" id="intro" style="top:7px;">Introduction</div>
+		<div class="subtitle button" id="help" style="top:37px;">Help</div>
 	</div>
 	<div class='primary'>
 		<div id="svgcont">
@@ -943,7 +956,7 @@
 		      cell.merge(enterCell).select("text").transition(trans).attr('opacity',function(d) {return showAllYear(d,prm)})
 		    } else {
 		      cell.merge(enterCell).select("path").transition(trans).attr('d',function(d) {
-		        if (d.points.length>3) {
+		        if (showAllVars(d,yr)>0) {
 		          return hex(d.points)
 		        } else {return false}
 		      }).attr('fill','black')
@@ -1061,7 +1074,7 @@
       infosvg.append("text")
       	.attr('class','lne')
         .attr('x',0)
-        .attr('y',200)
+        .attr('y',208)
         .attr('font-size','10px')
         .attr('fill','white')
         .text('90% confidence interval in gray')
@@ -1229,7 +1242,7 @@
 			infosvg.append("text")
       	.attr('class','lne')
         .attr('x',0)
-        .attr('y',206)
+        .attr('y',208)
         .attr('font-size','10px')
         .attr('fill','white')
         .text('90% confidence interval in gray')
