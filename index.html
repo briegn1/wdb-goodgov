@@ -414,35 +414,35 @@
 		const cbsvg = d3.select('#cbar')
 
 		d3.select("#close").on('click',function() {
-			d3.select("#modbg").transition(trans).style("display","none").style("visibility","hidden")
-			d3.select("#modal").transition(trans).style("display","none").style("visibility","hidden")
+			d3.select("#modbg").transition(trans).style("visibility","hidden").style("display","none")
+			d3.select("#modal").transition(trans).style("visibility","hidden").style("display","none")
 		})
 
 		d3.select("#closecap").on('click',function() {
-			d3.select("#modbg").transition(trans).style("display","none").style("visibility","hidden")
-			d3.select("#modcap").transition(trans).style("display","none").style("visibility","hidden")
+			d3.select("#modbg").transition(trans).style("visibility","hidden").style("display","none")
+			d3.select("#modcap").transition(trans).style("visibility","hidden").style("display","none")
 		})
 		
 		d3.select("#closehelp").on('click',function() {
-			d3.select("#modbg").transition(trans).style("display","none").style("visibility","hidden")
-			d3.select("#modhelp").transition(trans).style("display","none").style("visibility","hidden")
+			d3.select("#modbg").transition(trans).style("visibility","hidden").style("display","none")
+			d3.select("#modhelp").transition(trans).style("visibility","hidden").style("display","none")
 		})
 
 		d3.select("#modbg").on('click',function() {
-			d3.select("#modbg").transition(trans).style("display","none").style("visibility","hidden")
-			d3.select("#modal").transition(trans).style("display","none").style("visibility","hidden")
-			d3.select("#modhelp").transition(trans).style("display","none").style("visibility","hidden")
-			d3.select("#modcap").transition(trans).style("display","none").style("visibility","hidden")
+			d3.select("#modbg").transition(trans).style("visibility","hidden").style("display","none")
+			d3.select("#modal").transition(trans).style("visibility","hidden").style("display","none")
+			d3.select("#modhelp").transition(trans).style("visibility","hidden").style("display","none")
+			d3.select("#modcap").transition(trans).style("visibility","hidden").style("display","none")
 		})
 
 		d3.select("#intro").on('click',function() {
-			d3.select("#modbg").transition(trans).style("display","block").style("visibility","visible")
-			d3.select("#modal").transition(trans).style("display","block").style("visibility","visible")
+			d3.select("#modbg").transition(trans).style("visibility","visible").style("display","block")
+			d3.select("#modal").transition(trans).style("visibility","visible").style("display","block")
 		})
 		
 		d3.select("#help").on('click',function() {
-			d3.select("#modbg").transition(trans).style("display","block").style("visibility","visible")
-			d3.select("#modhelp").transition(trans).style("display","block").style("visibility","visible")
+			d3.select("#modbg").transition(trans).style("visibility","visible").style("display","block")
+			d3.select("#modhelp").transition(trans).style("visibility","visible").style("display","block")
 		})
 
 		const yearSel = d3.select("#year")
@@ -1042,8 +1042,8 @@
 				var thisCon = d3.select(this).attr('cty')
 				d3.select("#captitle").text(thisCon)
 				d3.select("#captxt").text(captxt[thisCon])
-				d3.select("#modbg").transition(trans).style("display","block").style("visibility","visible")
-				d3.select("#modcap").transition(trans).style("display","block").style("visibility","visible")
+				d3.select("#modbg").transition(trans).style("visibility","visible").style("display","block")
+				d3.select("#modcap").transition(trans).style("visibility","visible").style("display","block")
 			})
 		}
 
