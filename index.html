@@ -275,7 +275,7 @@
 			<div class='subtitle'><b>Info Window</b></div><br/>
 			<span class='topbottom' style="display:inline-block;"><b id="country"></b></span><br/>
 			<span class='topbottom' id="value" style="display:inline-block;"></span>
-			<svg id="ctyGraphic" height=200 width=200></svg>
+			<svg id="ctyGraphic" height=210 width=200></svg>
 		</div>
 	</div>
 	<div id="modbg" class="modbg"></div>
@@ -324,18 +324,21 @@
 			<tr>
 				<td><b>Africa </b></td>
 				<td><span class="colorbit" style="background-color: green; font-size:10px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td>
+				<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
 				<td><b>North America </b></td>
 				<td><span class="colorbit" style="background-color: blue; font-size:10px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td>
 			</tr>
 			<tr>
 				<td><b>Asia </b></td>
 				<td><span class="colorbit" style="background-color: purple; font-size:10px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td>
+				<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
 				<td><b>Oceania </b></td>
 				<td><span class="colorbit" style="background-color: fuchsia; font-size:10px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td>
 			</tr>
 			<tr>
 				<td><b>Central America & Caribbean </b></td>
 				<td><span class="colorbit" style="background-color: yellow; font-size:10px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td>
+				<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
 				<td><b>South America </b></td>
 				<td><span class="colorbit" style="background-color: orange; font-size:10px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td>
 			</tr>
@@ -1043,7 +1046,7 @@
       infosvg.append("text")
       	.attr('class','lne')
         .attr('x',0)
-        .attr('y',45)
+        .attr('y',200)
         .attr('font-family','Source Sans Pro, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Helvetica, Arial, sans-serif')
         .attr('font-size','10px')
         .attr('fill','white')
@@ -1138,7 +1141,7 @@
         .attr('class','lne')
         .attr('stroke','black')
         //.attr('fill','#DBB394')
-        .attr('fill','white')
+        .attr('fill','#5f0f4e')
         .attr('stroke-width',0).attr('d',function() {return bighex(dinter.lower)})
       
       infosvg.append("text")
@@ -1221,6 +1224,15 @@
         .attr('stroke','black')
         .attr('fill','none')
         .attr('stroke-width',1).attr('d',function() {return bighex(dpts)})
+		
+			infosvg.append("text")
+      	.attr('class','lne')
+        .attr('x',0)
+        .attr('y',206)
+        .attr('font-family','Source Sans Pro, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Helvetica, Arial, sans-serif')
+        .attr('font-size','10px')
+        .attr('fill','white')
+        .text('90% confidence interval in gray')
     }
 
 	</script>
