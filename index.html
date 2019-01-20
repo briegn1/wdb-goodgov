@@ -278,7 +278,7 @@
 		<div id="infobox">
 			<svg id="cbar" height=90 width=200></svg>
 			<div class="subtitle" id="tbhead"><b>Change <span id="tbrange"></span></b></div>
-			<div class="subtitle" style="font-size: 10px;">*Click for more information</div>
+			<div class="subtitle" style="font-size: 10px; padding: 2px;">*Click for more information</div>
 			<div class='topbottom'><b>Top 3</b></div>
 			<span class='topbottom'>1. </span><span class='topbottom' id="t3-1"></span><br/>
 			<span class='topbottom'>2. </span><span class='topbottom' id="t3-2"></span><br/>
@@ -1024,7 +1024,7 @@
 			  	q++
 			  }
 			}
-			d3.selectAll('.tb3txt').attr('title','Click for More Information').on('click',function() {
+			d3.selectAll('.tb3lnk').attr('title','Click for More Information').on('click',function() {
 				var thisCon = d3.select(this).attr('cty')
 				d3.select("#captitle").text(thisCon)
 				d3.select("#captxt").text(captxt[thisCon])
