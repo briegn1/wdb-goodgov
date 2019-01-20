@@ -285,7 +285,7 @@
 		<p class="modtxt modpan"><span class="panttl"><b>ONE INDEX, ONE YEAR</b></span>Each country is represented as a geolocated square. This is to enable easy comparison even between countries with small geographic area. Squares are colored by their index value for the selected year, with more red meaning lower on the 0 to 100 range, and more blue meaning higher. Clicking on a country will display its full name in the "Info Window" as well as its 90% confidence interval for value for that index for that year.<br/><img src="./oneone.png" class="modimg"/></p>
 		<p class="modtxt modpan"><span class="panttl"><b>ONE INDEX, ALL YEARS</b></span>Each square contains a stripped-down line graph for the 1996-2017 period of the survey. This enables comparison between countries as well as quick assessment of improvements or downgrading over time. Colors here are based on an average value for the index over the time period. Clicking on the country displays a larger version of the line graph in the "Info Window" that includes the 90% confidence interval over time in grey.<img src="./allone.png" class="modimg"/></p>
 		<p class="modtxt modpan"><span class="panttl"><b>ALL INDICES, ONE YEAR</b></span>Each square contains a spider chart with each vertex determined by an index value. This enables comparison between countries as well as understanding of strengths or weaknesses among the indices. Colors here are based on an average index value for the year. Clicking on the country displays a larger version of the spider chart in the "Info Window" that includes the 90% confidence interval for the indices in grey as well as vertex labels.<img src="./oneall.png" class="modimg"/></p>
-		<p class="modtxt modhalf"><span class="halfttl"><b>TOP/BOTTOM THREE: </b></span>Except when all indices are selected or the year is 1996, the top and bottom three countries in terms of change from the previous year (or over all years) are listed in the top right. Underlined countries are among the top and bottom three for the selected index for 1996 to 2017, and clicking on them brings up a window with more information about their increase or decline.</p>
+		<p class="modtxt modhalf"><span class="halfttl"><b>TOP/BOTTOM THREE: </b></span>Except when all indices are selected or the year is 1996, the top and bottom three countries in terms of change from the previous year (or over all years) are listed in the top right. Starred countries are among the top and bottom three for the selected index for 1996 to 2017, and clicking on them brings up a window with more information about their increase or decline. This is just a small sample of the stories that can be told about the last 21 years with this dataset.</p>
 		<button id="close" class="closebtn">CLOSE</button>
 	</div>
 	<div id="modhelp" class="modal" style="height:450px; display: none; font-size:13px;">
@@ -988,12 +988,12 @@
 			  let q = 1
 			  while (q<4) {
 			  	if (captxt[t3[q-1]['WBCountry/Territory']]) {
-			  		d3.select('#t3-'+q).text('').append('u').attr('class','tb3txt').attr('cty',t3[q-1]['WBCountry/Territory']).text(t3[q-1]['WBCountry/Territory']+': '+t3[q-1].diff.toFixed(2))
+			  		d3.select('#t3-'+q).attr('class','tb3txt').attr('cty',t3[q-1]['WBCountry/Territory']).text(t3[q-1]['WBCountry/Territory']+': '+t3[q-1].diff.toFixed(2)+'*')
 			  	} else {
 			  		d3.select('#t3-'+q).text(t3[q-1]['WBCountry/Territory']+': '+t3[q-1].diff.toFixed(2))
 			  	}
 			  	if (captxt[b3[q-1]['WBCountry/Territory']]) {
-			  		d3.select('#b3-'+q).text('').append('u').attr('class','tb3txt').attr('cty',b3[q-1]['WBCountry/Territory']).text(b3[q-1]['WBCountry/Territory']+': '+b3[q-1].diff.toFixed(2))
+			  		d3.select('#b3-'+q).attr('class','tb3txt').attr('cty',b3[q-1]['WBCountry/Territory']).text(b3[q-1]['WBCountry/Territory']+': '+b3[q-1].diff.toFixed(2)+'*')
 			  	} else {
 			  		d3.select('#b3-'+q).text(b3[q-1]['WBCountry/Territory']+': '+b3[q-1].diff.toFixed(2))
 			  	}
