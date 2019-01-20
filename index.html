@@ -6,10 +6,13 @@
     <title>What Makes A Good Government?</title>
     <script src="https://d3js.org/d3.v5.js"></script>
     <script src="./captxt.js"></script>
+		<link href="https://fonts.googleapis.com/css?family=Merriweather+Sans" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
     <style>
     	body {
     		background-color: gainsboro;
-    		font-family: Source Sans Pro, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Helvetica, Arial, sans-serif;
+    		/*font-family: Source Sans Pro, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Helvetica, Arial, sans-serif;*/
+				font-family: 'Merriweather Sans', sans-serif;
     		font-weight: 400;
     		margin: 0;
     	}
@@ -149,7 +152,8 @@
     	}
 
     	.panttl {
-    		font-family: Source Sans Pro, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Helvetica, Arial, sans-serif;
+    		/*font-family: Source Sans Pro, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Helvetica, Arial, sans-serif;*/
+				font-family: 'Merriweather Sans', sans-serif;
     		width: 100%;
     		display: inline-block;
     		text-align: center;
@@ -709,7 +713,7 @@
 	  	.attr('class','cbtext')
 	    .attr('x',function(d) {return d+20})
 	    .attr('y',67)
-	    .attr('font-family','sans-serif')
+	    .attr('font-family','Merriweather Sans, sans-serif')
 	    .attr('font-size','12px')
 	    .attr('fill','white')
 	    .attr('transform',function(d) {return 'rotate(45,'+(d+20)+',67)'})
@@ -841,7 +845,7 @@
 		  enterCell.append("text")
 		    .attr('x',1)
 		    .attr('y',9)
-		    .attr('font-family','sans-serif')
+		    .attr('font-family','Merriweather Sans, sans-serif')
 		    .attr('font-size','10px')
 		    .attr('fill','black')
 		    .attr('cursor','default')
@@ -974,7 +978,7 @@
 		  }
 		  cell.exit().remove()
 
-		  d3.selectAll('.tb3txt').remove()
+		  //d3.selectAll('.tb3txt').remove()
 		  if (prm != 'ALL' && yr != '1996') {
 		  	if (yr == 'ALL') {
 		  		d3.select('#tbrange').text('1996 to 2017')
@@ -990,12 +994,12 @@
 			  	if (captxt[t3[q-1]['WBCountry/Territory']]) {
 			  		d3.select('#t3-'+q).attr('class','tb3txt').attr('cty',t3[q-1]['WBCountry/Territory']).text(t3[q-1]['WBCountry/Territory']+': '+t3[q-1].diff.toFixed(2)+'*')
 			  	} else {
-			  		d3.select('#t3-'+q).text(t3[q-1]['WBCountry/Territory']+': '+t3[q-1].diff.toFixed(2))
+			  		d3.select('#t3-'+q).attr('class',null).attr('cty',null).text(t3[q-1]['WBCountry/Territory']+': '+t3[q-1].diff.toFixed(2))
 			  	}
 			  	if (captxt[b3[q-1]['WBCountry/Territory']]) {
 			  		d3.select('#b3-'+q).attr('class','tb3txt').attr('cty',b3[q-1]['WBCountry/Territory']).text(b3[q-1]['WBCountry/Territory']+': '+b3[q-1].diff.toFixed(2)+'*')
 			  	} else {
-			  		d3.select('#b3-'+q).text(b3[q-1]['WBCountry/Territory']+': '+b3[q-1].diff.toFixed(2))
+			  		d3.select('#b3-'+q).attr('class',null).attr('cty',null).text(b3[q-1]['WBCountry/Territory']+': '+b3[q-1].diff.toFixed(2))
 			  	}
 			  	q++
 			  }
@@ -1038,7 +1042,7 @@
       	.attr('class','lne')
         .attr('x',0)
         .attr('y',30)
-        .attr('font-family','Source Sans Pro, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Helvetica, Arial, sans-serif')
+        .attr('font-family','Merriweather Sans, sans-serif')
         .attr('font-size','12px')
         .attr('fill','white')
         .text(prm+' over time')
@@ -1047,7 +1051,7 @@
       	.attr('class','lne')
         .attr('x',0)
         .attr('y',200)
-        .attr('font-family','Source Sans Pro, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Helvetica, Arial, sans-serif')
+        .attr('font-family','Merriweather Sans, sans-serif')
         .attr('font-size','10px')
         .attr('fill','white')
         .text('90% confidence interval in gray')
@@ -1056,7 +1060,7 @@
         .attr('class','lne')
         .attr('x',0)
         .attr('y',(20-10)*7)
-        .attr('font-family','sans-serif')
+        .attr('font-family','Merriweather Sans, sans-serif')
         .attr('font-size','10px')
         .attr('fill','white')
         .text('100')
@@ -1065,7 +1069,7 @@
         .attr('class','lne')
         .attr('x',6.5)
         .attr('y',(20-5)*7)
-        .attr('font-family','sans-serif')
+        .attr('font-family','Merriweather Sans, sans-serif')
         .attr('font-size','10px')
         .attr('fill','white')
         .text('50')
@@ -1074,7 +1078,7 @@
         .attr('class','lne')
         .attr('x',13)
         .attr('y',20*7+2)
-        .attr('font-family','sans-serif')
+        .attr('font-family','Merriweather Sans, sans-serif')
         .attr('font-size','10px')
         .attr('fill','white')
         .text('0')
@@ -1083,7 +1087,7 @@
         .attr('class','lne')
         .attr('x',22)
         .attr('y',147)
-        .attr('font-family','sans-serif')
+        .attr('font-family','Merriweather Sans, sans-serif')
         .attr('font-size','10px')
         .attr('fill','white')
         .attr('transform','rotate(45,22,147)')
@@ -1093,7 +1097,7 @@
         .attr('class','lne')
         .attr('x',70)
         .attr('y',147)
-        .attr('font-family','sans-serif')
+        .attr('font-family','Merriweather Sans, sans-serif')
         .attr('font-size','10px')
         .attr('fill','white')
         .attr('transform','rotate(45,70,147)')
@@ -1103,7 +1107,7 @@
         .attr('class','lne')
         .attr('x',118)
         .attr('y',147)
-        .attr('font-family','sans-serif')
+        .attr('font-family','Merriweather Sans, sans-serif')
         .attr('font-size','10px')
         .attr('fill','white')
         .attr('transform','rotate(45,118,147)')
@@ -1113,7 +1117,7 @@
         .attr('class','lne')
         .attr('x',166)
         .attr('y',147)
-        .attr('font-family','sans-serif')
+        .attr('font-family','Merriweather Sans, sans-serif')
         .attr('font-size','10px')
         .attr('fill','white')
         .attr('transform','rotate(45,166,147)')
@@ -1148,7 +1152,7 @@
         .attr('class','lne')
         .attr('x',92)
         .attr('y',14)
-        .attr('font-family','sans-serif')
+        .attr('font-family','Merriweather Sans, sans-serif')
         .attr('font-size','10px')
         .attr('fill','white')
         .text('VA')
@@ -1157,7 +1161,7 @@
         .attr('class','lne')
         .attr('x',169)
         .attr('y',50)
-        .attr('font-family','sans-serif')
+        .attr('font-family','Merriweather Sans, sans-serif')
         .attr('font-size','10px')
         .attr('fill','white')
         .attr('transform','rotate(60,169,50)')
@@ -1167,7 +1171,7 @@
         .attr('class','lne')
         .attr('x',22)
         .attr('y',64)
-        .attr('font-family','sans-serif')
+        .attr('font-family','Merriweather Sans, sans-serif')
         .attr('font-size','10px')
         .attr('fill','white')
         .attr('transform','rotate(-60,22,64)')
@@ -1177,7 +1181,7 @@
         .attr('class','lne')
         .attr('x',92)
         .attr('y',194)
-        .attr('font-family','sans-serif')
+        .attr('font-family','Merriweather Sans, sans-serif')
         .attr('font-size','10px')
         .attr('fill','white')
         .text('RQ')
@@ -1186,7 +1190,7 @@
         .attr('class','lne')
         .attr('x',17)
         .attr('y',141)
-        .attr('font-family','sans-serif')
+        .attr('font-family','Merriweather Sans, sans-serif')
         .attr('font-size','10px')
         .attr('fill','white')
         .attr('transform','rotate(60,17,141)')
@@ -1196,7 +1200,7 @@
         .attr('class','lne')
         .attr('x',175)
         .attr('y',153)
-        .attr('font-family','sans-serif')
+        .attr('font-family','Merriweather Sans, sans-serif')
         .attr('font-size','10px')
         .attr('fill','white')
         .attr('transform','rotate(-60,175,153)')
@@ -1229,7 +1233,7 @@
       	.attr('class','lne')
         .attr('x',0)
         .attr('y',206)
-        .attr('font-family','Source Sans Pro, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Helvetica, Arial, sans-serif')
+        .attr('font-family','Merriweather Sans, sans-serif')
         .attr('font-size','10px')
         .attr('fill','white')
         .text('90% confidence interval in gray')
