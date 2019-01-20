@@ -318,7 +318,7 @@
 		<p class="modtxt modhalf"><span class="halfttl"><b>TOP/BOTTOM THREE: </b></span>Except when all indices are selected or the year is 1996, the top and bottom three countries in terms of change from the previous year (or over all years) are listed in the top right. Starred countries are among the top and bottom three for the selected index for 1996 to 2017, and clicking on them brings up a window with more information about their increase or decline. This is just a small sample of the stories that can be told about the last 21 years with this dataset.</p>
 		<button id="close" class="closebtn">CLOSE</button>
 	</div>
-	<div id="modhelp" class="modal" style="height:450px; display: none; visibility: hidden; opacity: 0; font-size:13px;">
+	<div id="modhelp" class="modal" style="height:450px; visibility: hidden; opacity: 0; font-size:13px;">
 		<div class="title"><b>HELP</b></div>
 		<p class="modtxt" style="margin: 5px;"><span class="halfttl"><b>ABBREVIATIONS: </b></span></p>
 		<table style="font-size:13px;">
@@ -436,12 +436,12 @@
 		})
 
 		d3.select("#intro").on('click',function() {
-			d3.select("#modbg").style("visibility","visible").transition(trans).style("opacity",1)
+			d3.select("#modbg").style("visibility","visible").transition(trans).style("opacity",0.5)
 			d3.select("#modal").style("visibility","visible").transition(trans).style("opacity",1)
 		})
 		
 		d3.select("#help").on('click',function() {
-			d3.select("#modbg").style("visibility","visible").transition(trans).style("opacity",1)
+			d3.select("#modbg").style("visibility","visible").transition(trans).style("opacity",0.5)
 			d3.select("#modhelp").style("visibility","visible").transition(trans).style("opacity",1)
 		})
 
@@ -1042,7 +1042,7 @@
 				var thisCon = d3.select(this).attr('cty')
 				d3.select("#captitle").text(thisCon)
 				d3.select("#captxt").text(captxt[thisCon])
-				d3.select("#modbg").style("visibility","visible").transition(trans).style("opacity",1)
+				d3.select("#modbg").style("visibility","visible").transition(trans).style("opacity",0.5)
 				d3.select("#modcap").style("visibility","visible").transition(trans).style("opacity",1)
 			})
 		}
