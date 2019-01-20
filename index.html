@@ -1006,12 +1006,12 @@
 			  	if (captxt[t3[q-1]['WBCountry/Territory']]) {
 			  		d3.select('#t3-'+q).attr('class','tb3lnk').attr('cty',t3[q-1]['WBCountry/Territory']).text(t3[q-1]['WBCountry/Territory']+': '+t3[q-1].diff.toFixed(2)+'*')
 			  	} else {
-			  		d3.select('#t3-'+q).attr('class','tb3txt').attr('cty',null).text(t3[q-1]['WBCountry/Territory']+': '+t3[q-1].diff.toFixed(2))
+			  		d3.select('#t3-'+q).attr('class','tb3txt').attr('title',null).on('click',null).attr('cty',null).text(t3[q-1]['WBCountry/Territory']+': '+t3[q-1].diff.toFixed(2))
 			  	}
 			  	if (captxt[b3[q-1]['WBCountry/Territory']]) {
 			  		d3.select('#b3-'+q).attr('class','tb3lnk').attr('cty',b3[q-1]['WBCountry/Territory']).text(b3[q-1]['WBCountry/Territory']+': '+b3[q-1].diff.toFixed(2)+'*')
 			  	} else {
-			  		d3.select('#b3-'+q).attr('class','tb3txt').attr('cty',null).text(b3[q-1]['WBCountry/Territory']+': '+b3[q-1].diff.toFixed(2))
+			  		d3.select('#b3-'+q).attr('class','tb3txt').attr('title',null).on('click',null).attr('cty',null).text(b3[q-1]['WBCountry/Territory']+': '+b3[q-1].diff.toFixed(2))
 			  	}
 			  	q++
 			  }
