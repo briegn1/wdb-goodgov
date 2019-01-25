@@ -55,7 +55,7 @@
     	#infobox {
     		position: relative;
     		float: right;
-    		height: 650px;
+    		height: 660px;
     		width: 200px;
     		background-color: #5f0f4e;
 				color: white;
@@ -126,7 +126,7 @@
     		top: 10px;
     		transform: translateX(-50%);
     		background-color: lightgrey;
-    		height: 610px;
+    		height: 620px;
     		width: 900px;
     		opacity: 1.0;
     		z-index: 15;
@@ -306,6 +306,7 @@
 			<span class='topbottom' style="display:inline-block;"><b id="country"></b></span><br/>
 			<span class='topbottom' id="value" style="display:inline-block;"></span>
 			<svg id="ctyGraphic" height=210 width=200></svg>
+			<span class='topbottom'>Created By Matt Lammers, 2019</span>
 		</div>
 	</div>
 	<div id="modbg" class="modbg"></div>
@@ -697,11 +698,17 @@
 
 		let lookAtTxt = parmDict[param]+' for '
 		if (year !== 'ALL') {lookAtTxt = lookAtTxt+year} else {lookAtTxt = lookAtTxt+'1996 to 2017'}
-		svg.append('text')
+		let lookAtBox = svg.append('rect')
+			.attr('x',0)
+			.attr('y',0)
+			.attr('height',50)
+			.attr('width',1080)
+			.attr('fill','#5f0f4e')
+		lookAtBox.append('text')
 			.attr('id','lookAt')
 			.attr('class','subtitle')
-			.attr('fill','black')
-			.attr('x',500)
+			.attr('fill','white')
+			.attr('x',580)
 			.attr('y',25)
 			.attr('text-anchor','middle')
 			.attr('alignment-baseline','central')
