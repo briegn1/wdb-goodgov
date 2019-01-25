@@ -55,7 +55,7 @@
     	#infobox {
     		position: relative;
     		float: right;
-    		height: 660px;
+    		height: 630px;
     		width: 200px;
     		background-color: #5f0f4e;
 				color: white;
@@ -79,6 +79,7 @@
     		font-size: 24px;
     		width: 100%;
     		text-align: center;
+				font-weight: bold;
     	}
 
     	.subtitle {
@@ -698,16 +699,11 @@
 
 		let lookAtTxt = parmDict[param]+' for '
 		if (year !== 'ALL') {lookAtTxt = lookAtTxt+year} else {lookAtTxt = lookAtTxt+'1996 to 2017'}
-		let lookAtBox = svg.append('rect')
-			.attr('x',0)
-			.attr('y',0)
-			.attr('height',50)
-			.attr('width',1080)
-			.attr('fill','#5f0f4e')
-		lookAtBox.append('text')
+		svg.append('text')
 			.attr('id','lookAt')
 			.attr('class','subtitle')
-			.attr('fill','white')
+			.attr('fill','black')
+			.attr('font-weight','bold')
 			.attr('x',580)
 			.attr('y',25)
 			.attr('text-anchor','middle')
